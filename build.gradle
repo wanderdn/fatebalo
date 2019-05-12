@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'application'
+
+group = 'com.hadoop'
+version = '0.0.1'
+sourceCompatibility = '1.8'
+repositories {
+	mavenCentral()
+}
+
+application{
+	mainClassName = 'main.java.com.hadoop.hw/HwApplication'
+
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	compile group: 'org.apache.spark', name: 'spark-core_2.12', version: '2.4.2'
+	compile group: 'ch.qos.logback', name: 'logback-classic'
+
+}
